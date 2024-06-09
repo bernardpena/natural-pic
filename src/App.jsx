@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 
 import Favorites from "./views/Favorites";
 import Home from "./views/Home";
+import NotFound from "./views/NotFound";
 
 const App = () => {
   return (
@@ -18,6 +19,8 @@ const App = () => {
           path="/favoritos"
           element={<Favorites />}
         />
+        <Route
+          patch="*" element={<NotFound />} />
       </Routes>
     </div>
   );

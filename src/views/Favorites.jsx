@@ -1,11 +1,14 @@
-const Favorites = () => {
-  return (
-    const { photos } = useContext(PhotoContext);
+import Gallery from "../components/Gallery";
 
-  <div>
-    <h1>Fotos favoritas</h1>
-    <div className="p-3 gallery grid-columns-4"></div>
-  </div>
+export default function Favorites() {
+
+  return (
+    <div>
+      <h1>Fotos favoritas</h1>
+      <div className="p-3 gallery grid-columns-4">
+        <Gallery filtered={'favoritos'} />
+      </div>
+    </div>
   );
-};
-export default Favorites;
+}
+
