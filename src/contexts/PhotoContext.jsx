@@ -1,6 +1,5 @@
 import { createContext, useEffect, useState } from "react"
 
-
 // exportamos el contexto(sin default) y un provider como Componente8por default)
 export const Context = createContext();
 
@@ -12,16 +11,19 @@ export function PhotoProvider({ children }) {
     const getPhoto = async () => {
         const response = await fetch("/photos.json")
         const { photos: photosdb } = await response.json()
-        // setPhotos(photosdb)
-        photo.map((photos) => {
+        setPhotos(photosdb)
+
+        photos.map((photos) => {
             return {
                 id: photos.id,
                 src: photos.src.tiny,
                 alt: photos.alt,
                 liked: false,
             };
+
         });
-        setPhotos(photosdb)
+        // setPhotos(photosdb)
+        console.log(photos)
     };
 
     useEffect(() => {

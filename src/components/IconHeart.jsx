@@ -4,7 +4,7 @@ import { Context } from "../contexts/PhotoContext"
 
 export default function IconHeart({ id }) {
   const { photos, setPhotos } = useContext(Context);
-  const fotoElegida = photos.find((photo) => photos.id === id);
+  const fotoElegida = photos.find((photo) => photo.id === id);
 
 
   function handleClick() {
@@ -16,7 +16,7 @@ export default function IconHeart({ id }) {
   const color = fotoElegida.liked ? 'red' : 'white';
 
   return (
-    <span className="IconHeart" onClick={handleClick}>
+    <span className="corazon" onClick={handleClick}>
       <svg
         width="40px"
         viewBox="0 0 24 24"
